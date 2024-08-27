@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Javascript Functions</h2>
+    <p>THis example calls a function which performs a calculation, and returns the result :</p>
+    <p id="demo"></p>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+    <p>----------------------</p>
+    <p id="arithmetic"></p>
+    <p id="comparison"></p>
+    <p id="logical"></p>
+    <p id="assignment"></p>
+    <p>----------------------</p>
+    <h2>Penilaian Grade Mahasiswa Berdasarkan IPK</h2>
+    <label for="ipk">Masukkan IPK Mahasiswa:</label>
+    <input type="number" id="ipk" step="0.01" min="0" max="4">
+    <button onclick="tentukanGrade()">Hasil</button>
+    <p id="hasil"></p>
+    
+
+    <script>
+        function myFunction(p1,p2) {
+            return p1*p2
+        }
+        document.getElementById('demo').innerHTML = myFunction(4,3)
+
+        let numberVar = 42
+        let stringVar = "Hello World!"
+        let boolVar = true
+
+        document.getElementById('output1').innerHTML = 'Nilai dari numberVar : ' + numberVar
+        document.getElementById('output2').innerHTML = 'Nilai dari stringVar : ' + stringVar
+        document.getElementById('output3').innerHTML = 'Nilai dari boolVar : ' + boolVar
+
+        // Operator Aritmatika
+        let a = 10
+        let b = 5
+        let arithmeticResult = `
+            Addition: ${a + b}<br>
+            Subtraction: ${a - b}<br>
+            Multiplication: ${a * b}<br>
+            Division: ${a / b}<br>
+            Modulus: ${a % b}<br>
+            Exponentiation: ${a ** b}<br>
+            Increment: ${++a}<br>
+            Decrement:${--b}
+        `
+        document.getElementById("arithmetic").innerHTML = arithmeticResult
+
+        // Operator Aritmatika
+        let x = 10
+        let y = 5
+        let compResult = `
+            Equal: ${x == y } <br>
+            Not Equal: ${x != y } <br>
+            Strict Equal: ${x === y } <br>
+            Strict Not Equal: ${x !== y } <br>
+            Greater than: ${x > y } <br>
+            Less than: ${x < y } <br>
+            Greater than or equal: ${x >= y } <br>
+            Less than or equal: ${x <= y } <br>
+        `
+        document.getElementById('comparison').innerHTML = compResult
+
+        // Operator Logika
+        let p = true
+        let q = false
+        let logResult = `
+            AND : ${p && q}<br>
+            OR: ${p || q}<br>
+            NOT: ${!p}<br>
+            Ternary: ${p ? "True" : "False"}
+        `
+        document.getElementById('logical').innerHTML = logResult
+
+        // Operator Assignment
+        let m = 10
+        m += 5
+        m -= 3
+        m *= 2
+        m /= 4
+        m %= 3
+        let assignmentResult = `Final value of m: ${m}`
+        document.getElementById('assignment').innerHTML= assignmentResult
+
+        function tentukanGrade() {
+            let ipk = parseFloat(document.getElementById('ipk').value)
+            let grade =
+            ipk > 3.5 ? 'Cumlaude'
+            : ipk >= 3 && ipk <= 3.5 ? 'Baik'
+            : ipk < 3 ? 'Cukup' : 'Error'
+
+            // if(ipk>3.5){
+            //     grade = 'Cumlaude'
+            // } else if (ipk >= 3 && ipk <= 3.5) {
+            //     grade = 'Baik'
+            // } else if(ipk < 3 ){
+            //     grade = 'Cukup'
+            // } 
+
+            for (let i = 0; i < 5; i++) {
+                console.log(i)
+            }
+            document.getElementById('hasil').innerHTML = "Grade : " + grade
+        }
+
+        let numbers = [];
+        for (let i = 0; i < 10; i++) {
+            numbers.push(Math.floor(Math.random() * 100) + 1);
+        }
+
+        console.log("Array of random numbers:", numbers);
+
+        // Initialize variables for total, min, and max
+        let total = 0;
+        let min = numbers[0];
+        let max = numbers[0];
+
+        // Calculate total, min, and max
+        for (i=0 ; i<=numbers.length ; i++) {
+            total += numbers[1]
+
+            if(numbers[i]<min) {
+                min = numbers[i]
+            }
+
+            if(number[i]>max){
+                max = numbers[i]
+            }
+        }
+
+        // Calculate the average
+        let average = total / numbers.length;
+
+        // Output the results
+        console.log("Total:", total);
+        console.log("Average:", average);
+        console.log("Minimum:", min);
+        console.log("Maximum:", max);
+    </script>
+</body>
+</html>
